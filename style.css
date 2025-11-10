@@ -1,0 +1,157 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '';
+}
+
+:root
+{
+    --szinFejlec:#00e35b;
+    --szinMenusav: #000000;
+    --szinHatter: aqua;
+    --szinSzoveg: #b3ffcc;
+    --terkozKozepes: 1rem;
+    --terkozNagy: 1.2rem
+}
+
+@keyframes myAnimation {
+  from { background-color: #00e35b; }
+  to { background-color: #000000; }
+}
+
+body
+{
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--szinSzoveg);
+    background-color: #fff;
+    animation-name: myAnimation;
+	animation-duration: 8s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+nav a
+{
+    color: var(--szinSzoveg);
+    text-decoration: none;
+    padding: var(--terkozNagy);
+    display: block;    
+}
+
+nav a:hover
+{
+    background-color: #0f3c55;
+}
+
+nav ul
+{
+    list-style: none;
+    background-color: var(--szinMenusav);
+    justify-content: center;
+    display: flex;
+}
+
+main
+{
+    max-width: 1200px;
+    margin: var(--terkozNagy) auto;
+    padding: 0 var(--terkozNagy);
+    /*background-color: white;*/
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.543);
+}
+
+header
+{
+    background-color: var(--szinFejlec);
+    color: --szinSzoveg;
+    text-align: center;
+    padding: var(--terkozKozepes);
+
+}
+
+#bevezeto 
+{
+    text-align: center;
+    padding: var(--terkozNagy);
+}
+
+#bevezeto img
+{
+    width: 180px;
+    margin: 0 auto var(--terkozKozepes) auto;
+    
+}
+
+#bevezeto p
+{
+    color: var(-szinSzoveg);
+    font-size: 1.5rem;
+    margin-bottom: var(--terkozNagy) ;
+}
+
+#bemutatkozas
+{
+    padding: var(--terkozKozepes)
+}
+
+#bemutatkozas p 
+{
+    text-align: justify;
+    font-size: 1.3rem;
+}
+
+#bemutatkozas h2 
+{
+    font-size: 2.25rem;
+}
+
+/* Projektjeim */
+#informaciok {
+    text-align: center;
+    padding: var(--terkozNagy);
+    margin: var(--terkozNagy) auto;
+}
+
+#merfoldkovek {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: var(--terkozNagy);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--terkozNagy);
+}
+
+.kartya {
+    border-radius: 25px;
+	border-width: 2px;
+	border-style: solid;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: var(--terkozNagy);
+}
+
+.kartya img {
+    height: auto;
+    width: 200px;
+}
+
+.tartalom {
+	padding: 1.5rem;
+}
+
+.tartalom h3 {
+    color: --szinSzoveg;
+    margin-bottom: 0.5rem;
+}
+
+.link {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+}
