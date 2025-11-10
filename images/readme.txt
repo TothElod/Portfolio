@@ -1,1 +1,0 @@
-itt lesznek a képek
