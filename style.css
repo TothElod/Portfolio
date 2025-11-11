@@ -1,110 +1,119 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: '';
 }
 
-:root
-{
-    --szinFejlec:#00e35b;
-    --szinMenusav: #000000;
-    --szinHatter: aqua;
-    --szinSzoveg: #b3ffcc;
+:root {
+    font-family: Roboto, "Helvetica Neue", Arial;
+    line-height: 1.6;
+    color: var(--szinSzoveg);
+
+    background: #393E46;
+    /* background: #027e91;  */
+
+    /* color: #dabb8a; */
+
+    --szinVilagos: #948979;
+    --szinSotet: #0e4c56;
+    --szinMenusav: #222831;
+    --szinSzoveg: #a7b1ce;
+    --terkozKicsi: .5rem;
     --terkozKozepes: 1rem;
     --terkozNagy: 1.2rem
 }
 
-@keyframes myAnimation {
-  from { background-color: #00e35b; }
-  to { background-color: #000000; }
+@keyframes smoothGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-body
-{
-    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+body {
+    background: linear-gradient(270deg, #222831, #027e91, #0e4c56, #393E46);
+    background-size: 600% 600%;
+    animation: smoothGradient 25s ease infinite;
     color: var(--szinSzoveg);
-    background-color: #fff;
-    animation-name: myAnimation;
-	animation-duration: 8s;
-	animation-direction: alternate;
-	animation-iteration-count: infinite;
 }
 
-nav a
-{
+
+nav a {
     color: var(--szinSzoveg);
     text-decoration: none;
-    padding: var(--terkozNagy);
-    display: block;    
+    padding: var(--terkozKozepes) var(--terkozNagy);
+    display: block;
 }
 
-nav a:hover
-{
+nav a:hover {
     background-color: #0f3c55;
 }
 
-nav ul
-{
+nav ul {
     list-style: none;
     background-color: var(--szinMenusav);
     justify-content: center;
     display: flex;
+    box-shadow: 2px 0 8px 0 #24282f;
 }
 
-main
-{
+nav .links {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+main {
     max-width: 1200px;
     margin: var(--terkozNagy) auto;
     padding: 0 var(--terkozNagy);
-    /*background-color: white;*/
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.543);
 }
 
-header
-{
+header {
     background-color: var(--szinFejlec);
-    color: --szinSzoveg;
+    color: var(--szinSzoveg);
     text-align: center;
     padding: var(--terkozKozepes);
 
 }
 
-#bevezeto 
-{
+#bevezeto {
     text-align: center;
     padding: var(--terkozNagy);
 }
 
-#bevezeto img
-{
+#bevezeto img {
     width: 180px;
-    margin: 0 auto var(--terkozKozepes) auto;
-    
+    margin-top: var(--terkozKozepes);
+
 }
 
-#bevezeto p
-{
+#bevezeto p {
     color: var(-szinSzoveg);
     font-size: 1.5rem;
-    margin-bottom: var(--terkozNagy) ;
+    margin-bottom: var(--terkozNagy);
+    letter-spacing: 2px;
+
 }
 
-#bemutatkozas
-{
+#bemutatkozas {
     padding: var(--terkozKozepes)
 }
 
-#bemutatkozas p 
-{
+#bemutatkozas p {
     text-align: justify;
     font-size: 1.3rem;
 }
 
-#bemutatkozas h2 
-{
+#bemutatkozas h2 {
     font-size: 2.25rem;
 }
 
@@ -117,7 +126,7 @@ header
 
 #merfoldkovek {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--terkozNagy);
     max-width: 1200px;
     margin: 0 auto;
@@ -125,33 +134,50 @@ header
 }
 
 .kartya {
+    height: 250px;
+    background-color: #ffffff;
     border-radius: 25px;
-	border-width: 2px;
-	border-style: solid;
-    border-radius: 10px;
+    /* border-width: 2px;
+    border-style: solid; */
     overflow: hidden;
     text-align: center;
-    padding: var(--terkozNagy);
+    /* padding: var(--terkozNagy); */
+    box-shadow: 2px 0 8px 0 #24282f;
+    color: var(--szinSotet);
+    padding: var(--terkozNagy)
 }
 
 .kartya img {
     height: auto;
-    width: 200px;
+    width: 100px;
+    margin: auto;
+    
 }
 
 .tartalom {
-	padding: 1.5rem;
+    padding: .5rem;
 }
 
 .tartalom h3 {
-    color: --szinSzoveg;
+    color: var(--szinSotet);
     margin-bottom: 0.5rem;
 }
 
 .link {
-    background-color: white;
-    color: black;
+    background-color: var(--szinSotet);
+    color: rgb(247, 247, 247);
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 25px;
     padding: 0.5rem 1rem;
+}
+
+.name {
+    text-transform: uppercase;
+    margin: var(--terkozNagy) auto;
+    letter-spacing: 5px;
+}
+
+.portfolio {
+    text-transform: uppercase;
+    letter-spacing: 7px;
 }
