@@ -10,9 +10,6 @@
     color: var(--szinSzoveg);
 
     background: #393E46;
-    /* background: #027e91;  */
-
-    /* color: #dabb8a; */
 
     --szinVilagos: #948979;
     --szinSotet: #0e4c56;
@@ -20,7 +17,9 @@
     --szinSzoveg: #a7b1ce;
     --terkozKicsi: .5rem;
     --terkozKozepes: 1rem;
-    --terkozNagy: 1.2rem
+    --terkozNagy: 1.2rem;
+    --terkozNagyonnagy: 4rem;
+
 }
 
 @keyframes smoothGradient {
@@ -42,8 +41,8 @@ body {
     background-size: 600% 600%;
     animation: smoothGradient 25s ease infinite;
     color: var(--szinSzoveg);
+    min-height: 100vh;
 }
-
 
 nav a {
     color: var(--szinSzoveg);
@@ -69,6 +68,47 @@ nav .links {
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 4px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222831f4;
+    min-width: 220px;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.dropdown-content li {
+    width: 100%;
+}
+
+.dropdown-content a {
+    padding: var(--terkozKicsi) var(--terkozKozepes);
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.dropdown-content a:hover {
+    background-color: #0f3c55;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown>a {
+    cursor: pointer;
 }
 
 main {
@@ -134,28 +174,21 @@ header {
 }
 
 .kartya {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     height: 250px;
     background-color: #ffffff;
     border-radius: 25px;
-    /* border-width: 2px;
-    border-style: solid; */
     overflow: hidden;
-    text-align: center;
-    /* padding: var(--terkozNagy); */
     box-shadow: 2px 0 8px 0 #24282f;
     color: var(--szinSotet);
     padding: var(--terkozNagy)
 }
 
 .kartya img {
-    height: auto;
-    width: 100px;
-    margin: auto;
-    
-}
-
-.tartalom {
-    padding: .5rem;
+    height: 100px;
 }
 
 .tartalom h3 {
@@ -180,4 +213,16 @@ header {
 .portfolio {
     text-transform: uppercase;
     letter-spacing: 7px;
+}
+
+.tartalom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: var(--terkozNagy) var(--terkozNagyonnagy);
+}
+
+.szoveg {
+    padding: var(--terkozNagy);
 }
