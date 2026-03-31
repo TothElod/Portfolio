@@ -225,4 +225,5 @@ header {
 
 .szoveg {
     padding: var(--terkozNagy);
+    font-size: xx-large;
 }
