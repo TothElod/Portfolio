@@ -44,6 +44,14 @@ body {
     min-height: 100vh;
 }
 
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
 nav a {
     color: var(--szinSzoveg);
     text-decoration: none;
@@ -223,6 +231,19 @@ header {
     justify-content: space-around;
     padding: var(--terkozNagy) var(--terkozNagyonnagy);
 }
+
+#vazlat img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .szoveg {
     padding: var(--terkozNagy);
