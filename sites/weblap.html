@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weblapfejlesztés</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" type="image/x-icon" href="images/">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -33,31 +35,65 @@
     </nav>
     <div class="tartalom">
         <div class="szoveg">
-             Frontend: HTML5, CSS3, Bootstrap
+            Frontend: HTML5, CSS3, Bootstrap
 
-    Eszközök: VS Code
+            Eszközök: VS Code
 
-    Egyéb: responzív design, Cross-browser kompatibilitás
+            Egyéb: responzív design, Cross-browser kompatibilitás
 
-A projekt során elsajátítottam a modern webfejlesztés teljes eszköztárát, különös hangsúlyt fektetve a komponens alapú frontend fejlesztésre. Megtanultam, hogyan építhetek fel skálázható, karbantartható alkalmazásokat, amelyekben a kódstruktúra áttekinthető. Emellett gyakorlatot szereztem a felhasználói felületek tesztelésében. A különböző technológiák integrálása során kiemelt figyelmet fordítottam a biztonsági szempontokra és a felhasználóbarát élmény biztosítására.
-Képek a fejlesztés lépéseiről és a kész weblapról
+            A projekt során elsajátítottam a modern webfejlesztés teljes eszköztárát. Megtanultam, hogyan építhetek fel
+            skálázható, karbantartható alkalmazásokat, amelyekben a kódstruktúra áttekinthető. Emellett gyakorlatot
+            szereztem a felhasználói felületek tesztelésében. A különböző technológiák integrálása során kiemelt
+            figyelmet
+            fordítottam a biztonsági szempontokra és a felhasználóbarát élmény biztosítására.
+            Képek a fejlesztés lépéseiről és a kész weblapról
 
-(Itt a helyedben a következő típusú képeket tenném be – a szöveges helyfoglalók helyett a saját képernyőképeiddel helyettesítsd őket.)
+            <h1>Vázlat</h1>
 
-    Vázlat / Wireframe
-    
+            <section id="vazlat">
+                <img src="../images/weboldal_vazlat.png" alt="">
+            </section>
 
-    Fejlesztés közbeni állapot
-    [Képernyőkép a kódrészletről és a böngészőben megjelenő félkész felületről]
+            <h1>Fejlesztés közbeni állapot</h1>
 
-    Reszponzív nézetek tesztelése
-    [Kollázs vagy több kép, amelyen ugyanaz az oldal látható mobil, tablet és asztali nézetben]
+            <section id="vazlat">
+                <img src="../images/weblap_kod.png" alt="">
+            </section>
 
-    Kész weblap – fő nézet
-    [Teljes képernyős kép a végleges, élesben futó vagy bemutatásra kész weboldalról]
+            <h1>Reszponzív nézetek tesztelése</h1>
+
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../images/weboldal_mobil.png" class="d-block " alt="mobil nézet">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/weblodal_tablet.png" class="d-block " alt="tablet nézet">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/weboldal_asztal.png" class="d-block " alt="asztali nézet">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            Kész weblap – fő nézet
+            [Teljes képernyős kép a végleges, élesben futó vagy bemutatásra kész weboldalról]
 
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
