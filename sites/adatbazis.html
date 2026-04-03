@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adatbázis-kezelés</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" type="image/x-icon" href="images/">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -31,22 +33,228 @@
             <li class="links"><a href="reflection.html">Önreflexió</a></li>
         </ul>
     </nav>
+
     <div class="tartalom">
         <div class="szoveg">
-            Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit.
-            Duis eu varius lectus.
-            Fusce mollis mi in ex suscipit, a aliquam lacus blandit.
-            Maecenas molestie elit bibendum, accumsan nisl in, luctus urna.
-            Morbi tincidunt lectus velit. Nulla diam augue, aliquam vel eros sed, vulputate fermentum risus. Vivamus at
-            leo consectetur odio auctor hendrerit aliquam id massa. Vivamus lorem metus, tempor et auctor at, suscipit
-            nec sem. Donec lacinia justo eros, ut rhoncus risus molestie sit amet. Pellentesque tempor neque lacus, eget
-            condimentum tellus dignissim eu. Nam vel porttitor justo. Etiam sagittis erat et consectetur consectetur.
-            Curabitur fermentum vel erat et pulvinar. Praesent id quam at ante ultricies mollis ut vel nisl. Suspendisse
-            quis odio a elit accumsan venenatis. Nullam a tellus at purus accumsan tempor nec in odio. Donec suscipit,
-            orci a congue bibendum, augue neque cursus libero, non sagittis purus augue vitae justo.
+            <div class="technologiak">
+                <h2>Használt szoftverek és technológiák</h2>
+                <ul>
+                    <li><strong>Adatbázis-kezelő rendszer:</strong> MySQL / MariaDB</li>
+                    <li><strong>Adatbázis tervező eszköz:</strong> phpMyAdmin / MySQL Workbench</li>
+                    <li><strong>SQL lekérdező felület:</strong> phpMyAdmin SQL tab / HeidiSQL / DBeaver</li>
+                    <li><strong>E-K diagram készítő:</strong> MySQL Workbench / draw.io</li>
+                    <li><strong>Fájlformátumok:</strong> .sql (export), .png (képek), .pdf (dokumentáció)</li>
+                </ul>
+            </div>
+
+            <h2>Elsajátított ismeretek</h2>
+            <p>A projekt során elsajátítottam a relációs adatbázisok tervezésének és kezelésének alapjait.
+                Megismertem
+                az
+                egyed-kapcsolat (E-K) diagramok készítését, a táblák közötti kapcsolatok (1:N, N:M) definiálását,
+                valamint
+                az idegen kulcsok használatát a referenciális integritás biztosítására. Gyakorlati feladatként egy
+                raktárkészlet-nyilvántartó rendszert hoztam létre, amelyben termékeket, beszállítókat, kategóriákat
+                és
+                raktárakat kezelek. SQL lekérdezéseket írtam adatok lekérésére, beszúrására, módosítására és
+                törlésére,
+                valamint összetettebb lekérdezéseket (aggregációs függvények, JOIN-ok, csoportosítás) is
+                készítettem. A
+                megszerzett tudásomat később programozási feladatok során is tudom alkalmazni adatbázis-elérést
+                igénylő
+                alkalmazások fejlesztésénél.</p>
+
+            <h3>Téma: Raktárkészlet-nyilvántartó rendszer</h3>
+            <h3>Koncepció leírása</h3>
+            <p>A raktárkészlet-nyilvántartó rendszer célja egy vállalkozás raktári készletének nyomon követése és
+                kezelése.
+                Az adatbázis nyilvántartja a különböző termékeket, azok beszállítóit, kategóriáit, valamint a több
+                raktárhelyszínt. A készletmozgásokat (bevételezés és kiadás) is rögzíti, így bármikor lekérdezhető
+                az
+                aktuális készletszint termékenként és raktáranként. A rendszer segítségével riaszthatók a
+                minimumkészlet-szint alá csökkent termékek, elemezhető a forgalom, és kimutatható az egyes raktárak
+                kihasználtsága. Az adatbázis jól skálázható, bővíthető új táblákkal (pl. megrendelések, számlák), és
+                más
+                rendszerekkel (pl. webáruház, számlázó program) is összekapcsolható.</p>
+
+            <h3>Az adatbázis táblái</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tábla neve</th>
+                        <th>Szerepe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>beszallitok</code></td>
+                        <td>Beszerző neve</td>
+                    </tr>
+                    <tr>
+                        <td><code>kategoriak</code></td>
+                        <td>Termékkategóriák (név, leírás)</td>
+                    </tr>
+                    <tr>
+                        <td><code>termekek</code></td>
+                        <td>Termékek (cikkszám, név, ár, minimum készletszint)</td>
+                    </tr>
+                    <tr>
+                        <td><code>raktarak</code></td>
+                        <td>Raktárhelyiségek (név, helyszín, kapacitás)</td>
+                    </tr>
+                    <tr>
+                        <td><code>keszletmozgasok</code></td>
+                        <td>Készletmozgások (bevétel/kiadás, mennyiség, dátum)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>A táblák (egyedek) közötti kapcsolatok számossága</h3>
+            <table class="szamossag-tabla">
+                <thead>
+                    <tr>
+                        <th>Kapcsolat</th>
+                        <th>Tábla (egyed) A</th>
+                        <th>Tábla (egyed) B</th>
+                        <th>Számosság</th>
+                        <th>Magyarázat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td><code>beszallitok</code></td>
+                        <td><code>termekek</code></td>
+                        <td><strong>1 : N</strong></td>
+                        <td>Egy beszállítóhoz <strong>több termék</strong> is tartozhat. Egy terméknek <strong>pontosan
+                                egy
+                                beszállítója</strong> van.</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td><code>kategoriak</code></td>
+                        <td><code>termekek</code></td>
+                        <td><strong>1 : N</strong></td>
+                        <td>Egy kategóriába <strong>több termék</strong> is tartozhat. Egy termék <strong>pontosan egy
+                                kategóriába</strong> tartozik.</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td><code>termekek</code></td>
+                        <td><code>keszletmozgasok</code></td>
+                        <td><strong>1 : N</strong></td>
+                        <td>Egy termékhez <strong>több készletmozgás</strong> is tartozhat. Minden készletmozgás
+                            <strong>egy
+                                termékhez</strong> kapcsolódik.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td><code>raktarak</code></td>
+                        <td><code>keszletmozgasok</code></td>
+                        <td><strong>1 : N</strong></td>
+                        <td>Egy raktárban <strong>több készletmozgás</strong> is történhet. Minden készletmozgás
+                            <strong>egy
+                                raktárhoz</strong> kapcsolódik.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td><code>termekek</code></td>
+                        <td><code>raktarak</code></td>
+                        <td><strong>N : M</strong></td>
+                        <td>Egy termék <strong>több raktárban</strong> is lehet, és egy raktárban <strong>több
+                                termék</strong>
+                            is található. A <code>keszletmozgasok</code> tábla mint <strong>kapcsolótábla</strong> oldja
+                            fel
+                            ezt
+                            a kapcsolatot.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Kapcsolatok vizuális ábrája</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Forrás tábla</th>
+                        <th>Számosság</th>
+                        <th>Cél tábla</th>
+                        <th>Magyarázat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>beszallitok</td>
+                        <td>1 ────────── (N)</td>
+                        <td>termekek</td>
+                        <td>Egy beszállító több terméket is szállíthat</td>
+                    </tr>
+                    <tr>
+                        <td>kategoriak</td>
+                        <td>1 ────────── (N)</td>
+                        <td>termekek</td>
+                        <td>Egy kategóriába több termék tartozik</td>
+                    </tr>
+                    <tr>
+                        <td>termekek</td>
+                        <td>1 ────────── (N)</td>
+                        <td>keszletmozgasok</td>
+                        <td>Egy termékhez több mozgás rögzíthető</td>
+                    </tr>
+                    <tr>
+                        <td>raktarak</td>
+                        <td>1 ────────── (N)</td>
+                        <td>keszletmozgasok</td>
+                        <td>Egy raktárban több mozgás történhet</td>
+                    </tr>
+                    <tr>
+                        <td>termekek</td>
+                        <td>N ────────── (M)</td>
+                        <td>raktarak</td>
+                        <td>Termékek és raktárak sok-a-sokhoz kapcsolata</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Képek a fejlesztés lépéseiről</h2>
+
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../images/ek_diagram.drawio.png" class="d-block" alt="mobil nézet">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/adatbazis_kezelo_felulet.png" class="d-block" alt="tablet nézet">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/lekerdezes_szerkeztes_1.png" class="d-block" alt="asztali nézet">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/lekerdezes_szerkeztes_2.png" class="d-block" alt="asztali nézet">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <hr>
+
+
         </div>
+
+
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
