@@ -33,15 +33,70 @@
     </nav>
     <div class="tartalom">
         <div class="szoveg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu varius lectus. Fusce mollis mi in ex
-            suscipit, a aliquam lacus blandit. Maecenas molestie elit bibendum, accumsan nisl in, luctus urna. Morbi
-            tincidunt lectus velit. Nulla diam augue, aliquam vel eros sed, vulputate fermentum risus. Vivamus at leo
-            consectetur odio auctor hendrerit aliquam id massa. Vivamus lorem metus, tempor et auctor at, suscipit nec
-            sem. Donec lacinia justo eros, ut rhoncus risus molestie sit amet. Pellentesque tempor neque lacus, eget
-            condimentum tellus dignissim eu. Nam vel porttitor justo. Etiam sagittis erat et consectetur consectetur.
-            Curabitur fermentum vel erat et pulvinar. Praesent id quam at ante ultricies mollis ut vel nisl. Suspendisse
-            quis odio a elit accumsan venenatis. Nullam a tellus at purus accumsan tempor nec in odio. Donec suscipit,
-            orci a congue bibendum, augue neque cursus libero, non sagittis purus augue vitae justo.
+            <h1>4. mérföldkő: Ipari informatikai rendszerek - Hálózatkezelés</h1>
+            <h2>Használt szoftverek és eszközök</h2>
+            <div class="technologiak">
+                <ul>
+                    <li><strong>Cisco Packet Tracer 8.x</strong> – hálózat tervezése, konfigurálása és szimulációja</li>
+                    <li><strong>1 db Cisco 1941 router</strong> (Router0) – alhálózatok összekapcsolása</li>
+                    <li><strong>2 db Cisco 2960-24TT switch</strong> (Switch0, Switch0(1)) – helyi hálózati kapcsolatok
+                    </li>
+                    <li><strong>1 db Printer-PT</strong> (Printer0) – hálózati nyomtató a információs pultban</li>
+                    <li><strong>1 db Analog Phone-PT</strong> (Analog Phone0) – VoIP telefon a információs pultban</li>
+                    <li><strong>1 db Server-PT webserver</strong> (WordPress) – webes felület biztosítása a
+                        szerverszobában</li>
+                    <li><strong>6 db PC-PT</strong> – munkaállomások elosztva:
+                        <ul>
+                            <li>1 db a könyvtárban</li>
+                            <li>3 db a számítógép szobában</li>
+                            <li>1 db az információs pultban</li>
+                            <li>1 db a szerverszobában</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rézkábelek (Copper straight-through)</strong> – eszközök összekötése</li>
+                </ul>
+            </div>
+
+            <h2>Elsajátított ismeretek</h2>
+            <p>
+                A feladat során gyakorlati ismereteket szereztem ipari környezetben használt hálózatok tervezésében és
+                konfigurálásában.
+                Négy funkcionális egységet (könyvtár, számítógép szoba, információs pult, szerverszoba) kapcsoltam össze
+                egy router segítségével,
+                biztosítva a szegmentált kommunikációt. Beállítottam a statikus routingot, az alapértelmezett átjárókat,
+                valamint alapvető hálózati biztonsági elemeket (jelszavak, SSH, ACL).
+                Gyakorlatot szereztem a Packet Tracer eszközeinek használatában, a hibakeresésben (ping, traceroute)
+                és a hálózati dokumentáció készítésében. Külön figyelmet fordítottam a különböző helyiségek közötti
+                kommunikáció biztosítására és a szerverszoba erőforrásainak (webszerver, nyomtató, telefon)
+                elérhetőségére.
+            </p>
+
+            <h2>A hálózat kiépítésének lépései</h2>
+            <p>Az alábbi képernyőképek bemutatják a hálózat tervezésének és konfigurálásának főbb állomásait.</p>
+
+            <h3>1. lépés: A logikai topológia kialakítása</h3>
+            <div id="vazlat">
+                <img src="../images/halozat.png">
+                <p>A fenti ábrán látható a teljes hálózat logikai felépítése. Router0 kapcsolja össze a négy fő
+                    szegmenst:
+                    a könyvtárat (1 PC), a számítógép szobát (3 PC), az információs pultot (1 PC) és a szerverszobát
+                    (1 PC, webszerver, nyomtató, telefon).</p>
+            </div>
+
+            <h3>2. lépés: Router konfigurálása (CLI)</h3>
+            <div id="vazlat">
+                <p>A routeren beállítottam a két interfész IP-címét (a switchek felé), az alapértelmezett átjárókat,
+                    valamint a szükséges statikus route-okat a négy alhálózat közötti kommunikáció biztosításához.</p>
+            </div>
+
+            <h3>3. lépés: Kapcsolat tesztelése (ping)</h3>
+            <div id="vazlat">
+                <p>A konfiguráció után ping tesztekkel ellenőriztem a kommunikációt. A fenti képernyőképen látható,
+                    hogy a számítógép szobában lévő egyik PC (PC3) sikeresen eléri a szerverszobában lévő webszervert.
+                </p>
+            </div>
+
+
         </div>
     </div>
 </body>
