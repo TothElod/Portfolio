@@ -33,15 +33,89 @@
     </nav>
     <div class="tartalom">
         <div class="szoveg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu varius lectus. Fusce mollis mi in ex
-            suscipit, a aliquam lacus blandit. Maecenas molestie elit bibendum, accumsan nisl in, luctus urna. Morbi
-            tincidunt lectus velit. Nulla diam augue, aliquam vel eros sed, vulputate fermentum risus. Vivamus at leo
-            consectetur odio auctor hendrerit aliquam id massa. Vivamus lorem metus, tempor et auctor at, suscipit nec
-            sem. Donec lacinia justo eros, ut rhoncus risus molestie sit amet. Pellentesque tempor neque lacus, eget
-            condimentum tellus dignissim eu. Nam vel porttitor justo. Etiam sagittis erat et consectetur consectetur.
-            Curabitur fermentum vel erat et pulvinar. Praesent id quam at ante ultricies mollis ut vel nisl. Suspendisse
-            quis odio a elit accumsan venenatis. Nullam a tellus at purus accumsan tempor nec in odio. Donec suscipit,
-            orci a congue bibendum, augue neque cursus libero, non sagittis purus augue vitae justo.
+            <h2>ChessTracker - Sakkalkalmazás C# és WinForms használatával</h2>
+
+            <h3>Használt szoftverek és technológiák</h3>
+            <ul>
+                <li><strong>Nyelv és keretrendszer:</strong> C#, .NET WinForms</li>
+                <li><strong>Sakkmotor:</strong> Gera.Chess (NuGet csomag)</li>
+                <li><strong>HTTP kommunikáció:</strong> HttpClient, Lichess API</li>
+                <li><strong>JSON feldolgozás:</strong> Newtonsoft.Json</li>
+                <li><strong>Adattárolás:</strong> BindingList&lt;T&gt;</li>
+                <li><strong>Fejlesztői eszköz:</strong> Visual Studio 2026</li>
+                <li><strong>Videószerkesztés:</strong> OBS Studio, OpenShot</li>
+            </ul>
+
+            <h3>Elsajátított ismeretek</h3>
+            <p>A ChessTracker alkalmazás fejlesztése során mélyreható ismereteket szereztem a C# és WinForms
+                technológiákban. Megtanultam, hogyan lehet külső API-kat (Lichess API) integrálni egy asztali
+                alkalmazásba, aszinkron programozással (async/await) kezelni a hálózati kéréseket, valamint dinamikus
+                felhasználói felületet létrehozni. Emellett gyakorlatot szereztem a Gera.Chess sakkkönyvtár
+                használatában, a JSON adatok feldolgozásában és a PGN formátumú exportálásban. A projekt során
+                megtapasztaltam a moduláris fejlesztés előnyeit, az eseményvezérelt programozást, valamint a többablakos
+                alkalmazások tervezését és összehangolását.</p>
+
+            <h2>ChessTracker - Sakkjátszmák rögzítésére és kezelésére</h2>
+            <p>A ChessTracker egy asztali alkalmazás, amely lehetővé teszi sakkjátszmák rögzítését, tárolását és
+                exportálását. A program a Gera.Chess könyvtár segítségével kezeli a sakkszabályokat, a WinForms
+                biztosítja a grafikus felületet. A ChessTracker a Lichess API segítségével képes importálni a
+                Lichess.org-on játszott sakkjátszmákat.</p>
+            <!--This is a comment. Comments are not displayed in the browser
+
+            <h3>Szerkesztő Design nézete</h3>
+            <img src="design-view.png" alt="Visual Studio Designer nézet - Form1, Form3, Form5"
+                style="max-width: 100%; border-radius: 12px; margin: 1rem 0;">
+            <p>A ChessTracker főbb űrlapjai a Visual Studio Designer nézetben: Form1 (főablak), Form3 (sakktábla) és
+                Form5 (lépésjegyzék)</p>
+
+            -->
+            
+
+            <h3>Futó alkalmazás</h3>
+
+            <p><strong>Főablak (Form1) - DataGridView a játszmák listájával</strong></p>
+            <img src="../images/form1.png" alt="ChessTracker főablak DataGridView-val"
+                style="max-width: 100%; border-radius: 12px; margin: 1rem 0;">
+
+            <p><strong>Sakktábla (Form3) és lépésjegyzék (Form5) egymás mellett</strong></p>
+            
+
+            <div class="row">
+                <div class="column">
+                    <img src="../images/form3.png" alt="Sakktábla és lépésjegyzék"
+                style="max-width: 100%; border-radius: 12px; margin: 1rem 0;">
+                </div>
+                <div class="column">
+                    <img src="../images/form5.png" alt="Sakktábla és lépésjegyzék"
+                style="max-width: 100%; border-radius: 12px; margin: 1rem 0;">
+                </div>
+            </div>
+
+            <p><strong>Lichess API import működés közben</strong></p>
+            <img src="../images/lichessapi.png" alt="Lichess import működés közben"
+                style="max-width: 100%; border-radius: 12px; margin: 1rem 0;">
+            <p>A Lichess API segítségével játszmák importálhatók: elod0 legutóbbi játszmáinak betöltése</p>
+
+            <h3>Videó az alkalmazás működéséről</h3>
+            <video controls style="max-width: 100%; border-radius: 12px; margin: 1rem 0;">
+                <source src="../videos/portfoliofeliratoszenevel.mp4" type="video/mp4">
+                A böngésződ nem támogatja a videó lejátszását.
+            </video>
+
+            <h3>Összefoglalás</h3>
+            <p>A ChessTracker egy komplex, több modulból álló asztali alkalmazás, amely bemutatja a C# és WinForms
+                technológiákban szerzett jártasságomat. A projekt során sikeresen integráltam a Lichess API-t,
+                megvalósítottam a játszmák PGN formátumba történő exportálását.</p>
+
+            <p><strong>Főbb funkciók:</strong></p>
+            <ul>
+                <li>Sakkjátszmák rögzítése valós időben a Gera.Chess könyvtár segítségével</li>
+                <li>Játszmák importálása a Lichess API-ról (felhasználónév alapján)</li>
+                <li>Játszmák exportálása PGN formátumba</li>
+                <li>Lépésjegyzék megjelenítése és követése</li>
+                <li>Sakk-matt és patthelyzet felismerése</li>
+            </ul>
+
         </div>
     </div>
 </body>
