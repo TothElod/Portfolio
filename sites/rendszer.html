@@ -32,15 +32,103 @@
     </nav>
     <div class="tartalom">
         <div class="szoveg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu varius lectus. Fusce mollis mi in ex
-            suscipit, a aliquam lacus blandit. Maecenas molestie elit bibendum, accumsan nisl in, luctus urna. Morbi
-            tincidunt lectus velit. Nulla diam augue, aliquam vel eros sed, vulputate fermentum risus. Vivamus at leo
-            consectetur odio auctor hendrerit aliquam id massa. Vivamus lorem metus, tempor et auctor at, suscipit nec
-            sem. Donec lacinia justo eros, ut rhoncus risus molestie sit amet. Pellentesque tempor neque lacus, eget
-            condimentum tellus dignissim eu. Nam vel porttitor justo. Etiam sagittis erat et consectetur consectetur.
-            Curabitur fermentum vel erat et pulvinar. Praesent id quam at ante ultricies mollis ut vel nisl. Suspendisse
-            quis odio a elit accumsan venenatis. Nullam a tellus at purus accumsan tempor nec in odio. Donec suscipit,
-            orci a congue bibendum, augue neque cursus libero, non sagittis purus augue vitae justo.
+
+
+            <div class="container">
+                <h1>Számítógépes
+                    rendszerüzemeltetés<br> <span style="font-size: 1.3rem;"></span></h1>
+
+                <h2>Használt szoftverek & szerver platformok</h2>
+                <ul class="software-list">
+                    <li><strong>VirtualBox</strong> – nyílt forráskódú virtualizációs szoftver</li>
+                    <li><strong>Windows Server 2016</strong> – szerver operációs rendszer</li>
+                    <li><strong>Active Directory Domain Services (AD DS)</strong></li>
+                    <li><strong>DHCP Server</strong> – dinamikus IP-cím kiosztás</li>
+                    <li><strong>DNS Server</strong> – tartománynév-feloldás</li>
+                </ul>
+
+                <h2>Elsajátított ismeretek</h2>
+                <div class="paragraph-box">
+                    <p>A szakmai gyakorlat során a számítógépes rendszerüzemeltetés területén mélyebb ismereteket
+                        szereztem a szerveroldali infrastruktúra kiépítése terén. Virtuális környezetben, a VirtualBox
+                        segítségével telepítettem és konfiguráltam a Windows Server 2016 operációs rendszert, majd arra
+                        egy teljes értékű Active Directory tartományvezérlőt építettem. Ennek részeként beállítottam a
+                        DHCP-szolgáltatást az ügyfelek dinamikus IP-címzéséhez, valamint a DNS-szolgáltatást a
+                        tartományon belüli névfeloldás biztosításához. Gyakorlatot szereztem felhasználók és csoportok
+                        létrehozásában, csoportházirendek (GPO) alkalmazásában, valamint a szerver alapvető biztonsági
+                        és hálózati paramétereinek beállításában. A munka során kiemelt figyelmet fordítottam a
+                        dokumentációra és a hibakeresési folyamatok megértésére is.</p>
+                </div>
+
+                <h2>Munkafolyamat – Konfigurációs képernyőképek</h2>
+                <div class="image-gallery">
+                    <div class="image-card">
+                        <img src="../images/virtualbox_new_vm.png" alt="VirtualBox - új virtuális gép létrehozása"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=VirtualBox:+Új+VM';">
+                        <div class="caption">1. VirtualBox – Windows Server 2016 virtuális gép létrehozása</div>
+                        <div class="placeholder-note">Helyi kép: virtualbox_new_vm.png</div>
+                    </div>
+                    <div class="image-card">
+                        <img src="../images/server_install_first_login.png"
+                            alt="Windows Server 2016 telepítés utáni első bejelentkezés"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=Első+bejelentkezés';">
+                        <div class="caption">2. Windows Server 2016 – első bejelentkezés a kiszolgálóra</div>
+                        <div class="placeholder-note">Helyi kép: server_install_first_login.png</div>
+                    </div>
+                    <div class="image-card">
+                        <img src="../images/dc_promo_ad_config.png" alt="Active Directory tartományvezérlő konfiguráció"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=DC+Promo';">
+                        <div class="caption">3. Tartományvezérlővé léptetés (DC promo) – AD DS telepítése</div>
+                        <div class="placeholder-note">Helyi kép: dc_promo_ad_config.png</div>
+                    </div>
+                    <div class="image-card">
+                        <img src="../images/dhcp_scope_config.png" alt="DHCP hatókör létrehozása"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=DHCP+hatókör';">
+                        <div class="caption">4. DHCP hatókör beállítása és engedélyezése</div>
+                        <div class="placeholder-note">Helyi kép: dhcp_scope_config.png</div>
+                    </div>
+                    <div class="image-card">
+                        <img src="../images/dns_forward_zone.png" alt="DNS forward lookup zone"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=DNS+zóna';">
+                        <div class="caption">5. DNS Forward Lookup Zone – tartományrekordok ellenőrzése</div>
+                        <div class="placeholder-note">Helyi kép: dns_forward_zone.png</div>
+                    </div>
+                    <div class="image-card">
+                        <img src="../images/ad_users_and_groups.png" alt="AD felhasználók és csoportok"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=AD+Felhasználók';">
+                        <div class="caption">6. Felhasználók és csoportok kezelése AD UC-ben</div>
+                        <div class="placeholder-note">Helyi kép: ad_users_and_groups.png</div>
+                    </div>
+                </div>
+
+                <div class="image-gallery" style="margin-top: -1rem;">
+                    <div class="image-card">
+                        <img src="../images/powershell_dhcpserver.png" alt="PowerShell DHCP konfiguráció"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=PowerShell+DHCP';">
+                        <div class="caption">7. PowerShell – DHCP szolgáltatás ellenőrzése</div>
+                        <div class="placeholder-note">Helyi kép: powershell_dhcpserver.png</div>
+                    </div>
+                    <div class="image-card">
+                        <img src="../images/gpo_manager.png" alt="Csoportházirend-kezelő"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/400x250?text=GPO+Manager';">
+                        <div class="caption">8. Csoportházirendek (GPO) alkalmazása tartomány szinten</div>
+                        <div class="placeholder-note">Helyi kép: gpo_manager.png</div>
+                    </div>
+                </div>
+
+                <p
+                    style="font-size: 0.9rem; background: #e8f0fe; padding: 0.6rem; border-radius: 20px; text-align: center;">
+                    A fenti képernyőképek szemléltetik a VirtualBox + Windows Server 2016 környezetben végzett Active
+                    Directory, DHCP és DNS konfiguráció lépéseit.
+                </p>
+
+                <footer>
+                    <p>5. mérföldkő - Számítógépes rendszerüzemeltetés (Ipari informatikai rendszerek) | Virtuális
+                        környezet: VirtualBox | Szerver: Windows Server 2016</p>
+                    <p>A fizikai adathordozón található a részletes dokumentáció .docx és .pdf formátumban, 20-30
+                        képernyőképpel.</p>
+                </footer>
+            </div>
         </div>
     </div>
 </body>
