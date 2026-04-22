@@ -32,15 +32,125 @@
     </nav>
     <div class="tartalom">
         <div class="szoveg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu varius lectus. Fusce mollis mi in ex
-            suscipit, a aliquam lacus blandit. Maecenas molestie elit bibendum, accumsan nisl in, luctus urna. Morbi
-            tincidunt lectus velit. Nulla diam augue, aliquam vel eros sed, vulputate fermentum risus. Vivamus at leo
-            consectetur odio auctor hendrerit aliquam id massa. Vivamus lorem metus, tempor et auctor at, suscipit nec
-            sem. Donec lacinia justo eros, ut rhoncus risus molestie sit amet. Pellentesque tempor neque lacus, eget
-            condimentum tellus dignissim eu. Nam vel porttitor justo. Etiam sagittis erat et consectetur consectetur.
-            Curabitur fermentum vel erat et pulvinar. Praesent id quam at ante ultricies mollis ut vel nisl. Suspendisse
-            quis odio a elit accumsan venenatis. Nullam a tellus at purus accumsan tempor nec in odio. Donec suscipit,
-            orci a congue bibendum, augue neque cursus libero, non sagittis purus augue vitae justo.
+            <h1>Ipari Motor Hőmérséklet Figyelő Rendszer</h1>
+
+            <h2>Projekt bemutatása</h2>
+            <p>
+                A projekt célja egy ipari motor vagy gép hőmérsékletének valós idejű figyelése,
+                riasztás generálása túlmelegedés esetén, valamint távoli felügyelet MQTT protokoll
+                segítségével. A rendszer ESP8266 mikrovezérlőre épül, DHT22 hőmérséklet érzékelőt
+                és csipogót (buzzer) használ a helyi riasztáshoz.
+            </p>
+
+            <h2>Használt szoftverek és fizikai eszközök</h2>
+
+            <h3>Szoftverek:</h3>
+            <ul>
+                <li>MicroPython</li>
+                <li>Thonny IDE (kód feltöltéshez és teszteléshez)</li>
+                <li>MQTT Explorer (MQTT üzenetek monitorozásához)</li>
+                <li>Mosquitto MQTT broker (üzenetközvetítő szerver)</li>
+            </ul>
+
+            <h3>Fizikai eszközök:</h3>
+            <ul>
+                <li>ESP8266 mikrovezérlő</li>
+                <li>DHT22 digitális hőmérséklet- és páratartalom érzékelő</li>
+                <li>Passzív csipogó (buzzer) 5V</li>
+                <li>Áramforrás (USB kábel vagy 5V adapter)</li>
+                <li>Jumper kábelek</li>
+            </ul>
+
+            <h2>Kapcsolási rajz</h2>
+            <table border="1">
+                <tr>
+                    <th>ESP8266 láb</th>
+                    <th>Csatlakoztatott eszköz</th>
+                </tr>
+                <tr>
+                    <td>GPIO4 (D2)</td>
+                    <td>DHT22 DATA</td>
+                </tr>
+                <tr>
+                    <td>3.3V</td>
+                    <td>DHT22 VCC</td>
+                </tr>
+                <tr>
+                    <td>GND</td>
+                    <td>DHT22 GND</td>
+                </tr>
+                <tr>
+                    <td>GPIO12 (D6)</td>
+                    <td>Buzzer (+)</td>
+                </tr>
+                <tr>
+                    <td>GND</td>
+                    <td>Buzzer (-)</td>
+                </tr>
+            </table>
+
+            <h2>Rendszer működése</h2>
+
+            <h3>Normál üzem (50°C alatt):</h3>
+            <ul>
+                <li>Rendszer csendben működik</li>
+                <li>Hőmérséklet adatok MQTT-n történő küldése 10 másodpercenként</li>
+            </ul>
+
+            <h3>Figyelmeztetés (51-70°C):</h3>
+            <ul>
+                <li>Csipogó 2 rövid hangjelzést ad</li>
+                <li>MQTT figyelmeztető üzenet küldése</li>
+                <li>Állapot: WARNING</li>
+            </ul>
+
+            <h3>Kritikus vészhelyzet (71°C felett):</h3>
+            <ul>
+                <li>Csipogó folyamatos hangjelzést ad</li>
+                <li>MQTT vészjelzés küldése</li>
+                <li>Távoli nyugtázási lehetőség</li>
+                <li>Állapot: CRITICAL_ALARM</li>
+            </ul>
+
+            <h2>MQTT kommunikáció</h2>
+            <p>A rendszer az alábbi MQTT topic-okat használja:</p>
+
+            <table border="1">
+                <tr>
+                    <th>Topic</th>
+                    <th>Irány</th>
+                    <th>Leírás</th>
+                </tr>
+                <tr>
+                    <td>factory/motor1/temperature</td>
+                    <td>ESP → Broker</td>
+                    <td>Aktuális hőmérséklet (°C)</td>
+                </tr>
+                <tr>
+                    <td>factory/motor1/status</td>
+                    <td>ESP → Broker</td>
+                    <td>Rendszer állapota (JSON)</td>
+                </tr>
+                <tr>
+                    <td>factory/motor1/alarm</td>
+                    <td>ESP → Broker</td>
+                    <td>Riasztási események</td>
+                </tr>
+                <tr>
+                    <td>factory/motor1/control</td>
+                    <td>Broker → ESP</td>
+                    <td>Vezérlő parancsok (pl. reset_alarm)</td>
+                </tr>
+            </table>
+
+            <h2>Tesztelés eredménye</h2>
+            <ul>
+                <li>WIFI csatlakozás:</li>
+                <li>MQTT kommunikáció:</li>
+                <li>Hőmérséklet érzékelés: (±0.5°C pontosság)</li>
+                <li>Hangjelzés: </li>
+                <li>Távoli nyugtázás: </li>
+            </ul>
         </div>
     </div>
 </body>
